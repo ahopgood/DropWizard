@@ -1,0 +1,5 @@
+ttlWebserviceAddress: https://wsg.thetrainline.com/rail_booking_service/v3.0/Soap.svc
+ttlWsgVersion: 3.0
+
+template: Hello, %s!
+defaultName: Stranger
