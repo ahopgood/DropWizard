@@ -6,33 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.dropwizard.Configuration;
 
-public class ExternalMonitoringConfiguration extends Configuration {
-
-	@NotEmpty
-	private String ttlWebserviceAddress;
-	@NotEmpty
-	private String ttlWsgVersion;
-	
-	@JsonProperty
-	public String getTtlWebServiceAddress(){
-		return this.ttlWebserviceAddress;
-	}
-	
-	@JsonProperty
-	public void setTtlWebServiceAddress(String ttlWebServiceAddress){
-		this.ttlWebserviceAddress = ttlWebServiceAddress;
-	}
-	
-	@JsonProperty
-	public String getTtlWsgVersion(){
-		return this.ttlWsgVersion;
-	}
-	
-	@JsonProperty
-	public void setTtlWsgVersion(String ttlWsgVersion){
-		this.ttlWsgVersion = ttlWsgVersion;
-	}
-	
+public class HelloWorldConfiguration extends Configuration {
 	@NotEmpty
 	private String defaultName = "Stranger";
 	

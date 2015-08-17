@@ -4,6 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -27,6 +28,16 @@ public class HelloWorldResource {
 		this.counter = new AtomicLong();
 	}
 
+	@GET
+	@Timed
+	@Path("/{surname}")
+	public Saying sayHello(
+			@QueryParam("name") Optional<String> name, 
+			@PathParam("surname") String surname){
+		final String value = String.format(template,  name.or(defaultName)+" "+surname);
+		return new Saying(counter.incrementAndGet(), value);
+	}
+	
 	@GET
 	@Timed
 	public Saying sayHello(@QueryParam("name") Optional<String> name){
